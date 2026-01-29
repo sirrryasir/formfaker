@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>FormFaker</h1>
+            <button id="settings-toggle" class="icon-btn" title="Settings">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12.22 2h-.44a2 2 0 00-2 2v.18a2 2 0 01-1 1.73l-.43.25a2 2 0 01-2 0l-.18-.08a2 2 0 00-2 0l-.45.45a2 2 0 000 2l.08.18a2 2 0 010 2l-.25.43a2 2 0 01-1.73 1H2a2 2 0 00-2 2v.44a2 2 0 002 2h.18a2 2 0 011.73 1l.25.43a2 2 0 010 2l-.08.18a2 2 0 000 2l.45.45a2 2 0 002 0l.18-.08a2 2 0 012 0l.43.25a2 2 0 011 1.73V20a2 2 0 002 2h.44a2 2 0 002-2v-.18a2 2 0 011-1.73l.43-.25a2 2 0 012 0l.18.08a2 2 0 002 0l.45-.45a2 2 0 000-2l-.08-.18a2 2 0 010-2l.25-.43a2 2 0 011.73-1H22a2 2 0 002-2v-.44a2 2 0 00-2-2h-.18a2 2 0 01-1.73-1l-.25-.43a2 2 0 010-2l.08-.18a2 2 0 000-2l-.45-.45a2 2 0 00-2 0l-.18.08a2 2 0 01-2 0l-.43-.25a2 2 0 01-1-1.73V4a2 2 0 00-2-2z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+            </button>
+        </header>
+
+        <main>
+            <button id="fill" class="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M2 12h20" />
+                </svg>
+                Fake this form
+            </button>
+            <button id="clear" class="btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                </svg>
+                Clear form
+            </button>
+        </main>
+
+        <section id="settings-panel" class="settings hidden">
+            <div class="form-group">
+                <label for="country">Data Locale</label>
+                <!-- Custom Dropdown for Image Support -->
+                <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                        <div class="custom-select__trigger">
+                            <span id="selected-country-display">🇺🇸 United States</span>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="custom-select__options">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <input type="hidden" id="country" value="US">
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="overwrite" checked>
+                    Overwrite existing values
+                </label>
+                <label>
+                    <input type="checkbox" id="ignorePassword">
+                    Ignore password fields
+                </label>
+                <label>
+                    <input type="checkbox" id="fillDisabled">
+                    Fill disabled inputs
+                </label>
+            </div>
+        </section>
+
+        <footer>
+            <div id="status" class="status">Ready v0.2.0</div>
+            <a href="https://github.com/sirrryasir/formfaker" target="_blank" class="github-link">★ Star on GitHub</a>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

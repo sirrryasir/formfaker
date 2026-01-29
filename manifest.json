@@ -1,0 +1,95 @@
+{
+    "manifest_version": 3,
+    "name": "FormFaker",
+    "description": "Smart random form filler for developers",
+    "version": "0.2.0",
+    "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
+    },
+    "author": "Yasir Hassan",
+    "homepage_url": "https://yaasir.dev",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "locales/AR.js",
+                "locales/AT.js",
+                "locales/AU.js",
+                "locales/BD.js",
+                "locales/BE.js",
+                "locales/BR.js",
+                "locales/CA.js",
+                "locales/CH.js",
+                "locales/CL.js",
+                "locales/CN.js",
+                "locales/CO.js",
+                "locales/CZ.js",
+                "locales/DE.js",
+                "locales/DK.js",
+                "locales/EG.js",
+                "locales/ES.js",
+                "locales/FI.js",
+                "locales/FR.js",
+                "locales/GB.js",
+                "locales/GR.js",
+                "locales/ID.js",
+                "locales/IN.js",
+                "locales/IT.js",
+                "locales/JP.js",
+                "locales/KE.js",
+                "locales/KR.js",
+                "locales/MX.js",
+                "locales/MY.js",
+                "locales/NG.js",
+                "locales/NL.js",
+                "locales/NO.js",
+                "locales/NZ.js",
+                "locales/PE.js",
+                "locales/PH.js",
+                "locales/PK.js",
+                "locales/PL.js",
+                "locales/PT.js",
+                "locales/RO.js",
+                "locales/RU.js",
+                "locales/SA.js",
+                "locales/SE.js",
+                "locales/SG.js",
+                "locales/SL.js",
+                "locales/SO.js",
+                "locales/TH.js",
+                "locales/TR.js",
+                "locales/UA.js",
+                "locales/US.js",
+                "locales/VE.js",
+                "locales/VN.js",
+                "locales/ZA.js",
+                "content/scanner.js",
+                "content/context.js",
+                "content/rules.js",
+                "content/generators.js",
+                "content/filler.js"
+            ]
+        }
+    ],
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "Command+Shift+F"
+            }
+        }
+    },
+    "action": {
+        "default_popup": "popup/popup.html"
+    }
+}
