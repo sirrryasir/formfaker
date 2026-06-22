@@ -1,85 +1,139 @@
+# 🎭 FormFaker - Intelligent Form Auto-Fill Chrome Extension
+
 <div align="center">
-  <img src="icons/logo.png" alt="FormFaker Logo" width="128" height="128">
-  <h1>FormFaker</h1>
+  <p>
+    <a href="https://github.com/sirrryasir/formfaker"><img src="https://img.shields.io/badge/Chrome%20Extension-TypeScript-4285F4?style=flat-square&logo=googlechrome" alt="Chrome" /></a>
+    <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square" alt="TypeScript" /></a>
+    <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat-square&logo=tailwindcss" alt="TailwindCSS" /></a>
+  </p>
 </div>
 
-> **The privacy-first, offline-ready form filler for professional developers and QA engineers.**
+---
 
-[![Version](https://img.shields.io/badge/version-0.2.0-blue)](https://github.com/yourusername/formfaker/releases)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Privacy](https://img.shields.io/badge/privacy-100%25%20offline-success)](https://yaasir.dev)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+## 📌 Overview
 
-**FormFaker** intelligently fills web forms with realistic, locale-aware dummy data. Unlike other tools that rely on cloud APIs or simple randomization, FormFaker uses advanced local heuristics to understand field context (Label, Name, Placeholder, Aria) to provide accurate data—instantly and securely.
+**FormFaker** is a productivity-focused Chrome extension that intelligently auto-fills web forms with realistic test data. Perfect for developers, QA testers, and product teams who need to quickly populate forms with valid test data during development and testing workflows.
 
 ---
 
-## Why FormFaker?
+## ✨ Key Features
 
-- **Privacy First**: Zero external requests. No tracking. All data generation happens locally in your browser.
-- **Global Scale**: Support for **50+ locales** (USA, UK, Somalia, Japan, Brazil, and many more).
-- **Smart Context**: Distinguishes between `email`, `username`, `mobile`, `landline`, `city`, and `zip` automatically.
-- **Profile Consistency**: Generates a consistent identity for each form fill (e.g., the email matches the name).
-- **Developer Efficiency**:
-  - Keyboard Shortcut: `Ctrl + Shift + F` (Cmd+Shift+F)
-  - Safe Mode (prevent accidental overwrites)
-  - Ignore Password / Hidden fields
+- **🚀 One-Click Fill**: Auto-populate any form with intelligent fake data
+- **🌐 Multi-Language**: Support for multiple locales and regional data formats
+- **🎯 Smart Detection**: Automatically identifies form field types (email, phone, address, etc.)
+- **📝 Custom Templates**: Save and reuse custom data templates
+- **🔒 Privacy First**: All data generation happens locally—nothing sent to servers
+- **⚡ Zero Config**: Works out-of-the-box, no setup required
+- **🎨 Clean UI**: Minimal popup with dark/light mode support
 
-## Features
+---
 
-| Feature | Description |
-| :--- | :--- |
-| **One-Click Fill** | Instantly detect and fill inputs, textareas, and selects. |
-| **50+ Locales** | Switch data sources instantly (e.g., test RTL layouts with Arabic names). |
-| **Safe Mode** | Protects your manually entered data from being overwritten. |
-| **Configurable** | Exclude password fields, hidden fields, or specific selectors. |
-| **Offline Ready** | Works perfectly on airplanes or secure air-gapped networks. |
+## 🛠️ Tech Stack
 
-## Installation
+| Component | Technology |
+|-----------|------------|
+| **Extension** | Manifest V3, Chrome APIs |
+| **Frontend** | TypeScript, HTML, CSS |
+| **Styling** | TailwindCSS |
+| **Build Tool** | Webpack |
 
-### Chrome Web Store
-*(Coming Soon)*
+---
 
-### Manual Installation (Developer Mode)
-1. Clone this repository:
+## 🚀 Quick Start
+
+### Installation from Chrome Web Store
+[Coming soon to Chrome Web Store](https://chrome.google.com/webstore)
+
+### Manual Installation (Development)
+
+1. **Clone the repo**
    ```bash
    git clone https://github.com/sirrryasir/formfaker.git
+   cd formfaker
    ```
-2. Open Chrome and navigate to `chrome://extensions`.
-3. Enable **Developer Mode** (toggle in the top right).
-4. Click **Load Unpacked**.
-5. Select the `formfaker` directory.
 
-## Usage
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-1. **Pin the Extension**: Click the puzzle piece icon and pin FormFaker.
-2. **Select Locale**: Click the icon and choose your target country (e.g., *Somalia* 🇸🇴 or *Japan* 🇯🇵).
-3. **Fill**: Click **"Fake this form"** or press `Ctrl+Shift+F`.
+3. **Build the extension**
+   ```bash
+   npm run build
+   ```
 
-> **Pro Tip**: Use "Safe Mode" in settings if you want to keep data you've already typed.
+4. **Load in Chrome**
+   - Open `chrome://extensions`
+   - Enable "Developer mode"
+   - Click "Load unpacked"
+   - Select the `dist/` folder
 
-## Contributing
-
-We love contributions! Whether it's adding a new locale, fixing a bug, or improving documentation.
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to get started.
-
-## Roadmap
-
-Check out [ROADMAP.md](./ROADMAP.md) to see what we're building next (API support, Team sync, and more).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+5. **Start developing**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-### Author
+## 📁 Project Structure
 
-**Yasir Hassan**
+```
+formfaker/
+├── content/         # Content script (runs on pages)
+├── popup/          # Extension popup UI
+├── icons/          # Extension icons
+├── locales/        # Language translations
+├── manifest.json   # Extension configuration
+└── package.json
+```
 
-- Website: [yaasir.dev](https://yaasir.dev)
-- GitHub: [@sirrryasir](https://github.com/sirrryasir)
-- Twitter: [@siryasirrr](https://twitter.com/siryasirrr)
+---
 
-Built with ❤️ for the developer community.
+## 🤝 Contributing
+
+Contributions are welcome! Here's how:
+
+1. **Fork and clone**
+   ```bash
+   git clone https://github.com/sirrryasir/formfaker.git
+   cd formfaker
+   ```
+
+2. **Install and start dev server**
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+3. **Make your changes**
+   - Create a feature branch: `git checkout -b feature/your-feature`
+   - Make changes and test in Chrome
+
+4. **Submit PR**
+   ```bash
+   git commit -m "feat: add your feature"
+   git push origin feature/your-feature
+   ```
+
+### Development Guidelines
+- Follow existing code style
+- Test on latest Chrome version
+- Update locales if adding new strings
+- Keep manifest.json aligned
+
+---
+
+## 📄 License
+
+MIT License. See `LICENSE` for details.
+
+---
+
+## 👨‍💻 Author
+
+Built by **Yasir Hassan** ([@sirrryasir](https://github.com/sirrryasir))  
+Portfolio: [yaasir.dev](https://www.yaasir.dev)
+
+---
+
+**Star this project!** ⭐
