@@ -1,139 +1,90 @@
-# 🎭 FormFaker - Intelligent Form Auto-Fill Chrome Extension
+# FormFaker - Chrome Extension for Smart Form Filling
 
-<div align="center">
-  <p>
-    <a href="https://github.com/sirrryasir/formfaker"><img src="https://img.shields.io/badge/Chrome%20Extension-TypeScript-4285F4?style=flat-square&logo=googlechrome" alt="Chrome" /></a>
-    <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square" alt="TypeScript" /></a>
-    <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat-square&logo=tailwindcss" alt="TailwindCSS" /></a>
-  </p>
-</div>
+Chrome extension that auto-fills web forms with realistic locale-specific fake data.
 
----
+## What It Does
 
-## 📌 Overview
+Scans any web form and auto-fills input fields with appropriate fake data based on field type and locale. Supports 50+ country locales for localized data generation.
 
-**FormFaker** is a productivity-focused Chrome extension that intelligently auto-fills web forms with realistic test data. Perfect for developers, QA testers, and product teams who need to quickly populate forms with valid test data during development and testing workflows.
+## Features
 
----
+Multi-Locale Support:
+- 50+ countries: US, UK, CA, AU, BR, MX, IN, JP, KR, and many more
+- Region-specific data: names, addresses, phone formats
+- Supported locales: AR, AT, AU, BD, BE, BR, CA, CH, CL, CN, CO, CZ, DE, DK, EG, ES, FI, FR, GB, GR, ID, IN, IT, JP, KE, KR, MX, MY, NG, NL, NO, NZ, PE, PH, PK, PL, PT, RO, RU, SA, SE, SG, SL, SO, TH, TR, UA, US, VE, VN, ZA
 
-## ✨ Key Features
+Form Scanning:
+- Automatically detects form field types
+- Identifies: text, email, phone, address, city, zip, date fields
 
-- **🚀 One-Click Fill**: Auto-populate any form with intelligent fake data
-- **🌐 Multi-Language**: Support for multiple locales and regional data formats
-- **🎯 Smart Detection**: Automatically identifies form field types (email, phone, address, etc.)
-- **📝 Custom Templates**: Save and reuse custom data templates
-- **🔒 Privacy First**: All data generation happens locally—nothing sent to servers
-- **⚡ Zero Config**: Works out-of-the-box, no setup required
-- **🎨 Clean UI**: Minimal popup with dark/light mode support
+Data Generation:
+- Fake names, emails, phone numbers
+- Addresses matching locale format
+- All data generated locally (no server calls)
 
----
+Keyboard Shortcut:
+- Ctrl+Shift+F (Windows/Linux)
+- Cmd+Shift+F (Mac)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| **Extension** | Manifest V3, Chrome APIs |
-| **Frontend** | TypeScript, HTML, CSS |
-| **Styling** | TailwindCSS |
-| **Build Tool** | Webpack |
+- Chrome Manifest V3
+- TypeScript
+- Vanilla JavaScript
+- TailwindCSS
+- Webpack build
 
----
+## How It Works
 
-## 🚀 Quick Start
+1. Install extension
+2. Open any web form
+3. Press Ctrl+Shift+F (or Cmd+Shift+F on Mac)
+4. Extension scans form fields
+5. Auto-fills with fake locale-specific data
+6. Submit form with test data
 
-### Installation from Chrome Web Store
-[Coming soon to Chrome Web Store](https://chrome.google.com/webstore)
+## Components
 
-### Manual Installation (Development)
+Content Scripts:
+- scanner.js: Detects form fields
+- generators.js: Creates fake data
+- filler.js: Fills input elements
+- rules.js: Field type detection rules
+- context.js: Context management
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/sirrryasir/formfaker.git
-   cd formfaker
-   ```
+Popup:
+- UI for extension controls
+- Locale selection
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Locales:
+- Each country has own locale file with data templates
 
-3. **Build the extension**
-   ```bash
-   npm run build
-   ```
+## Installation
 
-4. **Load in Chrome**
-   - Open `chrome://extensions`
-   - Enable "Developer mode"
-   - Click "Load unpacked"
-   - Select the `dist/` folder
+From Chrome Web Store:
+Coming soon
 
-5. **Start developing**
-   ```bash
-   npm run dev
-   ```
-
----
-
-## 📁 Project Structure
-
-```
-formfaker/
-├── content/         # Content script (runs on pages)
-├── popup/          # Extension popup UI
-├── icons/          # Extension icons
-├── locales/        # Language translations
-├── manifest.json   # Extension configuration
-└── package.json
+Manual (Development):
+```bash
+git clone https://github.com/sirrryasir/formfaker.git
+cd formfaker
+npm install
+npm run build
 ```
 
----
+Load in Chrome:
+1. Open chrome://extensions
+2. Enable "Developer mode"
+3. Click "Load unpacked"
+4. Select dist/ folder
 
-## 🤝 Contributing
+## Use Cases
 
-Contributions are welcome! Here's how:
+- Testing web forms during development
+- QA testing form submissions
+- Filling forms with valid test data
+- No real data needed
 
-1. **Fork and clone**
-   ```bash
-   git clone https://github.com/sirrryasir/formfaker.git
-   cd formfaker
-   ```
+## License
 
-2. **Install and start dev server**
-   ```bash
-   npm install
-   npm run dev
-   ```
-
-3. **Make your changes**
-   - Create a feature branch: `git checkout -b feature/your-feature`
-   - Make changes and test in Chrome
-
-4. **Submit PR**
-   ```bash
-   git commit -m "feat: add your feature"
-   git push origin feature/your-feature
-   ```
-
-### Development Guidelines
-- Follow existing code style
-- Test on latest Chrome version
-- Update locales if adding new strings
-- Keep manifest.json aligned
-
----
-
-## 📄 License
-
-MIT License. See `LICENSE` for details.
-
----
-
-## 👨‍💻 Author
-
-Built by **Yasir Hassan** ([@sirrryasir](https://github.com/sirrryasir))  
-Portfolio: [yaasir.dev](https://www.yaasir.dev)
-
----
-
-**Star this project!** ⭐
+MIT
